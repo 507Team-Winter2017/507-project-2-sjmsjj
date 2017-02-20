@@ -60,7 +60,7 @@ def do_problem3():
 		if alt_text is not None:
 			print(alt_text)
 		else:
-			print("No alternative text provided!!")
+			print("No alternative text provided!")
 
 # ### Your Problem 3 solution goes here
 
