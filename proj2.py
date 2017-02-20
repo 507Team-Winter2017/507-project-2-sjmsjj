@@ -1,5 +1,5 @@
 #proj2.py
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import ssl
 import re
@@ -9,7 +9,9 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 def get_soup(url):
-	html = urlopen(url, context=ctx).read()
+	req = Request(url, None, {'User-Agent': 'SI_CLASS'})
+	html = urlopen(req)
+	# html = urlopen(url, context=ctx).read()
 	soup = BeautifulSoup(html, "html.parser")
 	return soup
 
